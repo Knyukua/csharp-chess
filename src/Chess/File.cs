@@ -16,5 +16,7 @@ class File : IEquatable<File>
 
     public override string ToString() => IsValid() ? $"{(char)(_file + 'a')}" : "[invalid file]";
 
+    public override int GetHashCode() => ToString().GetHashCode();
+
     public bool Equals(File? other) => _file == other?._file;
 }

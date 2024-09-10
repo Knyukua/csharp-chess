@@ -16,5 +16,7 @@ class Rank : IEquatable<Rank>
 
     public override string ToString() => IsValid() ? $"{_rank + 1}" : "[invalid rank]";
 
+    public override int GetHashCode() => ToString().GetHashCode();
+
     public bool Equals(Rank? other) => _rank == other?._rank;
 }
